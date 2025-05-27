@@ -1,8 +1,9 @@
-﻿namespace Cine.Resenha.Domain;
+using MediatR;
 
-public class Movie
+namespace Cine.Resenha.Application.Features.Movie.Commands.CreateMovie;
+
+public class CreateMovieCommand : IRequest<int>
 {
-    public int Id { get; set; }
     public string Title { get; set; }
     public string Summary { get; set; }
     public string CoverLink { get; set; }

@@ -1,6 +1,8 @@
-﻿namespace Cine.Resenha.Domain;
+using MediatR;
 
-public class Movie
+namespace Cine.Resenha.Application.Features.Movie.Commands.UpdateMovie;
+
+public class UpdateMovieCommand : IRequest<Unit>
 {
     public int Id { get; set; }
     public string Title { get; set; }

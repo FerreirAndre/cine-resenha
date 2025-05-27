@@ -1,6 +1,6 @@
-﻿namespace Cine.Resenha.Domain;
+namespace Cine.Resenha.Application.Features.Movie.Queries.GetMovieDetails;
 
-public class Movie
+public class MovieDetailsDto
 {
     public int Id { get; set; }
     public string Title { get; set; }
@@ -9,7 +9,7 @@ public class Movie
     public string WhoChose { get; set; }
     public int ReleaseYear { get; set; }
     public DateTime? WatchedDate { get; set; }
-    public decimal Rating { get; set; } = 0.0m;
-    public int Duration { get; set; } = 0;
-    public bool Watched { get; set; } = false;
+    public decimal Rating { get; set; }
+    public int Duration { get; set; }
+    public bool Watched { get; set; }
 }
