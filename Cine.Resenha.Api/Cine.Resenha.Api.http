@@ -1,0 +1,6 @@
+@Cine.Resenha.Api_HostAddress = http://localhost:5160
+
+GET {{Cine.Resenha.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

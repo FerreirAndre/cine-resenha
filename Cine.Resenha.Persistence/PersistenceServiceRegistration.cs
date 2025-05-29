@@ -17,7 +17,7 @@ public static class PersistenceServiceRegistration
             options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));
         });
 
-        services.AddScoped(typeof(IMovieRepository), typeof(MovieRepository));
+        services.AddScoped<IMovieRepository, MovieRepository>();
         return services;
     }
 }

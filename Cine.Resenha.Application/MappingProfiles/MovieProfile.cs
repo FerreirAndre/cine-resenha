@@ -5,7 +5,7 @@ using Cine.Resenha.Application.Features.Movie.Queries.GetAllMovies;
 using Cine.Resenha.Application.Features.Movie.Queries.GetMovieDetails;
 using Cine.Resenha.Domain;
 
-namespace Cine.Resenha.Application;
+namespace Cine.Resenha.Application.MappingProfiles;
 
 public class MovieProfile : Profile
 {

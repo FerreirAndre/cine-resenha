@@ -2,17 +2,19 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{6CF6BCF2-CF84-4562-9BFD-0F6BEA1C505F}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cine.Resenha.API", "Cine.Resenha.API", "{C8B8F832-EBED-40CC-B18F-E5369D08720C}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{C8B8F832-EBED-40CC-B18F-E5369D08720C}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cine.Resenha.Core", "Cine.Resenha.Core", "{28078AB9-501A-439F-A272-778635D612F5}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{28078AB9-501A-439F-A272-778635D612F5}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cine.Resenha.Infrastructure", "Cine.Resenha.Infrastructure", "{E512AD3E-0741-4713-9728-6DC967D5A32D}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{E512AD3E-0741-4713-9728-6DC967D5A32D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cine.Resenha.Domain", "Cine.Resenha.Domain\Cine.Resenha.Domain.csproj", "{3F7EC90E-57A6-4D7E-95E3-0B80F3F2D766}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cine.Resenha.Application", "Cine.Resenha.Application\Cine.Resenha.Application.csproj", "{CB773E5C-A2AF-4516-9CE5-6BF694CF93A4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cine.Resenha.Persistence", "Cine.Resenha.Persistence\Cine.Resenha.Persistence.csproj", "{75EBB8B1-3A61-4202-AF19-24CFF452AD0D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cine.Resenha.Api", "Cine.Resenha.Api\Cine.Resenha.Api.csproj", "{A28BCA57-94D9-46C3-99BE-8D18CC32A511}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,6 +28,7 @@ Global
 		{3F7EC90E-57A6-4D7E-95E3-0B80F3F2D766} = {28078AB9-501A-439F-A272-778635D612F5}
 		{CB773E5C-A2AF-4516-9CE5-6BF694CF93A4} = {28078AB9-501A-439F-A272-778635D612F5}
 		{75EBB8B1-3A61-4202-AF19-24CFF452AD0D} = {E512AD3E-0741-4713-9728-6DC967D5A32D}
+		{A28BCA57-94D9-46C3-99BE-8D18CC32A511} = {C8B8F832-EBED-40CC-B18F-E5369D08720C}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{3F7EC90E-57A6-4D7E-95E3-0B80F3F2D766}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -40,5 +43,9 @@ Global
 		{75EBB8B1-3A61-4202-AF19-24CFF452AD0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{75EBB8B1-3A61-4202-AF19-24CFF452AD0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{75EBB8B1-3A61-4202-AF19-24CFF452AD0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A28BCA57-94D9-46C3-99BE-8D18CC32A511}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A28BCA57-94D9-46C3-99BE-8D18CC32A511}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A28BCA57-94D9-46C3-99BE-8D18CC32A511}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A28BCA57-94D9-46C3-99BE-8D18CC32A511}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

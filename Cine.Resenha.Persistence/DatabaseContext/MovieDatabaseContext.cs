@@ -15,8 +15,6 @@ public class MovieDatabaseContext : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(MovieDatabaseContext).Assembly);
-        modelBuilder.ApplyConfiguration(new MovieConfiguration());
-        
         base.OnModelCreating(modelBuilder);
     }
 }

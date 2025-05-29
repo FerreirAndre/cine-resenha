@@ -14,10 +14,10 @@ public class GetMovieDetailsQueryHandler : IRequestHandler<GetMovieDetailsQuery,
         _movieRepository = movieRepository;
         _mapper = mapper;
     }
-    public Task<MovieDetailsDto> Handle(GetMovieDetailsQuery request, CancellationToken cancellationToken)
+    public async Task<MovieDetailsDto> Handle(GetMovieDetailsQuery request, CancellationToken cancellationToken)
     {
-        var data = _movieRepository.GetByIdAsync(request.id);
+        var data = await _movieRepository.GetByIdAsync(request.id);
         var mappedData = _mapper.Map<MovieDetailsDto>(data);
-        return Task.FromResult(mappedData);
+        return mappedData;
     }
 }
