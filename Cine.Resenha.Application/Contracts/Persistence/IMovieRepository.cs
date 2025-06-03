@@ -10,4 +10,5 @@ public interface IMovieRepository
     Task UpdateAsync(Movie movie);
     Task DeleteAsync(Movie movie);
     Task<bool> MovieTitleUnique(string title);
+    Task<bool> MovieTitleUnique(string title, int id);
 }

@@ -29,7 +29,7 @@ public class UpdateMovieCommandValidator: AbstractValidator<UpdateMovieCommand>
 
     private Task<bool> MovieTitleUnique(UpdateMovieCommand request, CancellationToken token)
     {
-        return _movieRepository.MovieTitleUnique(request.Title);
+        return _movieRepository.MovieTitleUnique(request.Title, request.Id);
     }
     
     private bool BeHalfStep(decimal rating)

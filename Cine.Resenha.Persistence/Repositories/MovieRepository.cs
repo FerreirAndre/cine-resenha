@@ -43,4 +43,8 @@ public class MovieRepository(MovieDatabaseContext context) : IMovieRepository
     {
         return await _context.Set<Movie>().AnyAsync(x => x.Title == title) == false;
     }
+    public async Task<bool> MovieTitleUnique(string title, int id)
+    {
+        return await _context.Set<Movie>().AnyAsync(x => x.Title == title && x.Id != id) == false;
+    }
 }
