@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Cine.Resenha.Persistence.Migrations
 {
     [DbContext(typeof(MovieDatabaseContext))]
-    [Migration("20250529210707_Initial")]
+    [Migration("20250611142542_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
