@@ -1,5 +1,6 @@
 using Cine.Resenha.Application.Features.Movie.Commands.CreateMovie;
 using Cine.Resenha.Application.Features.Movie.Commands.DeleteMovie;
+using Cine.Resenha.Application.Features.Movie.Commands.ToggleWatchedMovie;
 using Cine.Resenha.Application.Features.Movie.Commands.UpdateMovie;
 using Cine.Resenha.Application.Features.Movie.Queries.GetAllMovies;
 using Cine.Resenha.Application.Features.Movie.Queries.GetMovieDetails;
@@ -68,6 +69,17 @@ namespace Cine.Resenha.Api.Controllers
             var command = new DeleteMovieCommand(id);
             await _mediator.Send(command);
             return NoContent();       
+        }
+        
+        // PATCH api/<MoviesController>/5
+        [HttpPatch("{id}/watched")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesDefaultResponseType]
+        public async Task<ActionResult> Patch(int id)
+        {
+            await _mediator.Send(new UpdateMovieWatchedCommand(id));
+            return NoContent();
         }
     }
 }

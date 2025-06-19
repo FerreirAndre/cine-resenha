@@ -11,4 +11,5 @@ public interface IMovieRepository
     Task DeleteAsync(Movie movie);
     Task<bool> MovieTitleUnique(string title);
     Task<bool> MovieTitleUnique(string title, int id);
+    Task ToggleWatched(int id);
 }
