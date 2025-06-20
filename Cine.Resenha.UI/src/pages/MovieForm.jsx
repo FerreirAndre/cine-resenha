@@ -20,19 +20,30 @@ function MovieForm() {
 
   useEffect(() => {
     if (isEdit) {
-      const data = getMovieById(id)
-      setForm(data);
+      const fetchMovie = async () => {
+        const data = await getMovieById(id);
+        setForm({
+          title: data.title || '',
+          coverLink: data.coverLink || '',
+          whoChose: data.whoChose || '',
+          rating: data.rating || 0,
+          duration: data.duration || 0,
+          releaseYear: data.releaseYear || 1900,
+          watched: data.watched || false,
+          summary: data.summary || '',
+        });
+      };
+      fetchMovie();
     }
-  }, [id])
-
+  }, [id, isEdit]);
   const handleReset = () => {
     setForm({
       title: '',
-      coverlink: '',
-      whochose: '',
+      coverLink: '',
+      whoChose: '',
       rating: '',
       duration: '',
-      releaseyear: '1900',
+      releaseYear: '1900',
       watched: false,
       summary: '',
     });
@@ -56,7 +67,7 @@ function MovieForm() {
     };
 
     if (isEdit) {
-      updateMovie(movieData);
+      updateMovie(id, movieData);
     } else {
       createMovie(movieData)
     }
@@ -83,8 +94,8 @@ function MovieForm() {
           <label>Cover Link</label>
           <input
             type="text"
-            name="coverlink"
-            value={form.coverlink}
+            name="coverLink"
+            value={form.coverLink}
             onChange={handleChange}
             className="form-control"
           />
@@ -94,8 +105,8 @@ function MovieForm() {
           <label>Who Chose</label>
           <input
             type="text"
-            name="whochose"
-            value={form.whochose}
+            name="whoChose"
+            value={form.whoChose}
             onChange={handleChange}
             className="form-control"
           />
@@ -130,8 +141,8 @@ function MovieForm() {
           <label>Release Year</label>
           <input
             type="number"
-            name="releaseyear"
-            value={form.releaseyear}
+            name="releaseYear"
+            value={form.releaseYear}
             onChange={handleChange}
             className="form-control"
           />

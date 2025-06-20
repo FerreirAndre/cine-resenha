@@ -7,7 +7,7 @@ export const getAllMovies = async () => {
 };
 
 export const getMovieById = async (id) => {
-  const response = await fetch(`${API_URL}/${id}`);
+  const response = await fetch(`${API_URL}${id}`);
   const data = await response.json();
   return data;
 };
