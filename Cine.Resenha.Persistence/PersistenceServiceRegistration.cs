@@ -13,9 +13,14 @@ public static class PersistenceServiceRegistration
         IConfiguration configuration)
     {
         services.AddDbContext<MovieDatabaseContext>(options =>
-        {
-            options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));
-        });
+                    options.UseSqlServer(
+                        configuration.GetConnectionString("DefaultConnection"),
+                        sqlServerOptions => sqlServerOptions.EnableRetryOnFailure(
+                            maxRetryCount: 5,
+                            maxRetryDelay: TimeSpan.FromSeconds(10),
+                            errorNumbersToAdd: null)
+                    )
+        );
 
         services.AddScoped<IMovieRepository, MovieRepository>();
         return services;

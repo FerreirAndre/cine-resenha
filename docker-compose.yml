@@ -1,0 +1,46 @@
+services:
+  mssql:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: mssql
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=Cineresenhadb1
+    ports:
+      - "1433:1433"
+    volumes:
+      - mssql_data:/var/opt/mssql
+    networks:
+      - cine-network
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    container_name: cine-api
+    ports:
+      - "5160:5160"
+    depends_on:
+      - mssql
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Server=mssql;Database=cine;User Id=sa;Password=Cineresenhadb1;TrustServerCertificate=true;
+    networks:
+      - cine-network
+
+  frontend:
+    build:
+      context: ./Cine.Resenha.UI
+      dockerfile: Dockerfile.frontend
+    container_name: cine-frontend
+    ports:
+      - "5173:5173"
+    depends_on:
+      - api
+    networks:
+      - cine-network
+
+volumes:
+  mssql_data:
+
+networks:
+  cine-network:
