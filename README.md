@@ -19,7 +19,7 @@ Desenvolvido com .NET 9, React e SQL Server, utilizando arquitetura Clean.
 
 ```bash
 docker compose up --build
-faça a migrate inicial, com as flags --project apontando para o Persistence e --startup-project apontando para a Api
+faça migrate e update inicial, com as flags --project apontando para o Persistence e --startup-project apontando para a Api
 reinicie a api
 ```
 
